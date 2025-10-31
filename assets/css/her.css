@@ -1,0 +1,164 @@
+/* ===============================
+   🌿 ESTILO GERAL - Maria Luiza
+   =============================== */
+
+/* 🎨 Paleta */
+:root {
+  --verde-escuro: #0b3d2e;
+  --verde-principal: #1f7a4d;
+  --verde-claro: #a3d9a5;
+  --branco: #ffffff;
+}
+
+/* 🧱 Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  color: var(--branco);
+  background-color: #000; /* fundo neutro entre sections */
+  scroll-behavior: smooth;
+}
+
+/* ===============================
+   🔝 CABEÇALHO
+   =============================== */
+.header {
+  background-color: var(--verde-claro);
+  color: var(--branco);
+  padding: 1rem 2rem;
+  text-align: center;
+  border-bottom: 5px solid black;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+nav a {
+  color: var(--branco);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--verde-claro);
+}
+
+/* ===============================
+   🌄 SEÇÕES COM IMAGEM DE FUNDO
+   =============================== */
+section {
+  position: relative;
+ height: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  color: var(--branco);
+  overflow: hidden;
+
+}
+
+/* Remove as imagens do fluxo e usa como background */
+section img {
+  display: none;
+}
+
+/* Define imagens de fundo específicas */
+.one {
+  background: url("../imgs/malu01.png") center/cover no-repeat;
+    justify-content:center;
+  align-items: flex-start;
+  text-align: left;
+  max-height: 1000px;
+}
+
+.two {
+  background: url("../imgs/malu02.jpeg") center/cover no-repeat;
+      justify-content:center;
+  align-items: flex-end;
+  text-align: left;
+    max-height: 1000px;
+}
+
+.three {
+  background: url("../imgs/malu05.png") center/cover no-repeat;
+     justify-content:center;
+  align-items: flex-start;
+  text-align: left;
+    max-height: 1000px;
+}
+
+.four {
+  background: url("../imgs/malu06.png") center/cover no-repeat;
+      justify-content:center;
+  align-items: flex-end;
+  text-align: left;
+    max-height: 1000px;
+}
+
+/* Sobreposição escura para destacar texto */
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+/* Texto por cima da imagem */
+section h1,
+section h3 {
+  position: relative;
+  z-index: 1;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+section h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+section h1 strong {
+  color: var(--verde-claro);
+}
+
+section h3 {
+  font-size: 1.1rem;
+  max-width: 800px;
+  line-height: 1.6;
+  color: white;
+}
+
+/* ===============================
+   📱 Responsividade
+   =============================== */
+@media (max-width: 768px) {
+  section {
+    height: 90vh;
+    padding: 1rem;
+  }
+
+  section h1 {
+    font-size: 1.6rem;
+  }
+
+  section h3 {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  nav a {
+    display: block;
+    margin: 0.3rem 0;
+  }
+}
