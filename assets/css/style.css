@@ -3,6 +3,7 @@
    ----------------------------- */
 
 /* 🎨 Paleta de cores */
+
 :root {
   --verde-escuro: #0b3d2e;
   --verde-principal: #1f7a4d;
@@ -10,8 +11,13 @@
   --branco: #ffffff;
   --cinza-claro: #f2f2f2;
   --cinza-escuro: #333333;
+  --dourado-suave: #f7d68b;
+  --rosa-claro: #f8dee3;
+  --rosa-suave: #ffb6b9;
+  --ciano: #54ecc6;
+  --verde-menta: #c9f0c7;
+  --preto: #101010;
 }
-
 /* 🌍 Configuração global */
 * {
   margin: 0;
