@@ -1,3 +1,38 @@
+ header {
+  background-color: var(--verde-principal);
+  color: var(--branco);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+nav {
+  margin-top: 0.8rem;
+}
+
+nav a {
+  color: var(--branco);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--dourado-suave);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
  /* ======== ESTILO PRINCIPAL ======== */
     body {
       margin: 0;

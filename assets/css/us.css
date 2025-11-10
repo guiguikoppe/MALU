@@ -8,7 +8,7 @@
 
 /* ===== BODY ===== */
 body {
-  background-color: #a9c9a4; /* Mantendo o verde */
+  background-color: #72986c;
   color: #222;
   min-height: 100vh;
   display: flex;
@@ -16,18 +16,67 @@ body {
 }
 
 /* ===== NAVBAR ===== */
-.logo{
-  font-size: 80px;
+header {
+  background: linear-gradient(90deg, var(--verde-principal), var(--verde-escuro));
+  color: var(--branco);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-radius: 0 0 25px 25px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(6px);
 }
 
-nav{
-  font-size: 30px;
+.logo {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  animation: float 3s ease-in-out infinite;
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+nav {
+  margin-top: 0.8rem;
+}
+
+nav a {
+  color: var(--branco);
+  text-decoration: none;
+  margin: 0 1.2rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--dourado-suave);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: var(--dourado-suave);
+}
 
 /* ===== CONTAINER ===== */
 .container {
-
   padding: 0 20px;
   flex: 1;
 }
@@ -35,10 +84,10 @@ nav{
 /* ===== CARDS ===== */
 .cards {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
-  width: auto;
+  width: 100%;
 }
 
 /* ===== CARD BASE ===== */
@@ -47,10 +96,11 @@ nav{
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  background-color: #fff;
+  background-color: #ffffff;
   transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .card:hover {
@@ -58,36 +108,40 @@ nav{
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
-.card img {
+/* ===== VIDEO ===== */
+.card video {
   width: 100%;
-  height: 330px;
+  height: auto;
+  border-radius: 20px 20px 0 0;
   object-fit: cover;
   display: block;
-  background-color: #000;
+  max-height: 550px;
   transition: transform 0.5s ease;
 }
 
-.card:hover img {
-  transform: scale(1.08);
+.card:hover video {
+  transform: scale(1.05);
 }
 
 /* ===== CARD BODY ===== */
 .card-body {
   flex-grow: 1;
+  width: 100%;
   padding: 25px;
   text-align: center;
   border-radius: 0 0 20px 20px;
+  color: #fff;
 }
 
 .price {
-  background-color: #000;
-  color: #fff;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
   font-weight: 700;
   font-size: 1.3rem;
   display: inline-block;
   padding: 10px 25px;
   border-radius: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   transition: 0.3s;
 }
 
@@ -105,79 +159,24 @@ nav{
 
 .card-body p {
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.7;
   margin: 15px 0;
-  opacity: 0.9;
+  opacity: 0.95;
+  color: #fff;
+  text-align: justify;
 }
 
-/* ===== BENEFÍCIOS ===== */
-.card-body h3 {
-  margin-top: 20px;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #333;
-}
-
-.card-body ul {
-  list-style: none;
-  margin-top: 10px;
-  text-align: left;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  padding-left: 0;
-}
-
-.card-body ul li {
-  position: relative;
-  padding-left: 22px;
-  margin-bottom: 6px;
-}
-
-.card-body ul li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: #2e6f40;
-  font-weight: 700;
-}
-
-
- /* Estilo básico para os vídeos dentro dos cards */
-    video {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .card {
-      background-color: #f5f5f5;
-      border-radius: 15px;
-      padding: 20px;
-      margin: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      max-width: 400px;
-    }
-
-    .cards {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-/* ===== CORES ESPECÍFICAS ===== */
+/* ===== CORES DOS CARDS ===== */
 .bronze .card-body {
-  background-color: #d2a46b;
+  background-color: #9f6bea;
 }
 
 .prata .card-body {
-  background-color: #e5e5e5;
+  background-color: #58b250;
 }
 
 .diamante .card-body {
-  background-color: #9db4f2;
+  background-color: #47bda7;
 }
 
 /* ===== RESPONSIVIDADE ===== */
@@ -187,17 +186,15 @@ nav{
   }
 
   .card {
-    width: 300px;
+    width: 320px;
   }
 
-  .card img {
-    height: 280px;
+  .card video {
+    max-height: 220px;
   }
 }
 
-/* ----- Celulares grandes (até 805px) ----- */
 @media (max-width: 805px) {
-
   .cards {
     flex-direction: column;
     align-items: center;
@@ -209,8 +206,8 @@ nav{
     max-width: 420px;
   }
 
-  .card img {
-    height: 250px;
+  .card video {
+    max-height: 250px;
   }
 
   .card-body {
@@ -223,7 +220,6 @@ nav{
   }
 }
 
-/* ----- Celulares pequenos (até 480px) ----- */
 @media (max-width: 480px) {
   .container {
     margin: 40px auto;
@@ -235,8 +231,8 @@ nav{
     border-radius: 15px;
   }
 
-  .card img {
-    height: 200px;
+  .card video {
+    max-height: 200px;
   }
 
   .card-body h2 {
@@ -252,16 +248,3 @@ nav{
     padding: 6px 18px;
   }
 }
-/* ===== FOOTER ===== */
-
-
-/* ===== FOOTER RESPONSIVO ===== */
-@media (max-width: 700px) {
-  .footer-inner {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-  }
-}
-    
